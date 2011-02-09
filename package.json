@@ -1,0 +1,11 @@
+{
+  "name":"maximus",
+  "version":"0.0.1",
+  "dependencies":{
+    "jade":"https://github.com/Skookum/jade/tarball/master",
+    "express":"https://github.com/Skookum/express/tarball/master",
+    "socket.io":">=0.6.8",
+    "box2dnode":"https://github.com/jadell/box2dnode/tarball/master"
+  },
+  "directories":{}
+}
