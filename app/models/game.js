@@ -17,5 +17,6 @@ exports = module.exports = new ko.model({
     dy: ko.observable(0),
     r: ko.observable(15)
   },
+  balls: ko.observableArray([]),
   users: ko.observableArray([ 'Jim', 'Hunter' ])
 });
