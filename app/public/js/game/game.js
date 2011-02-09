@@ -1,9 +1,7 @@
 // Create objects
 
 var game = new ko.model(),
-    input = new ko.model({
-      command: ko.observable('')
-    }),
+    controls = new ko.model(),
     canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d'),
     commands = {
@@ -51,7 +49,7 @@ window.setInterval(function() {
 
 $(document).bind('keydown', function(event) {
   if (commands[event.which]) {
-    input.command(commands[event.which]);
+    controls.command(commands[event.which]);
   }
 })
 
@@ -61,5 +59,5 @@ ko.utils.socketConnect(null, {
   }, '/js/lib/socketio-client/'
 );
 
-game.sync(game_id, 'r');
-//input.sync('2', 'w');
+game.sync(game_id);
+controls.sync(controls_id);

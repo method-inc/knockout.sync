@@ -13,8 +13,8 @@ exports = module.exports = new ko.model({
   ball: {
     x: ko.observable(23),
     y: ko.observable(100),
-    dx: ko.observable(2),
-    dy: ko.observable(1),
+    dx: ko.observable(0),
+    dy: ko.observable(0),
     r: ko.observable(15)
   },
   users: ko.observableArray([ 'Jim', 'Hunter' ])
