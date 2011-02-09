@@ -10,12 +10,14 @@ require.paths.unshift(
   root + '/node_modules'
 )
 
+require('math.uuid')
 
 // Modules
 
-var express = require('express')
+var express = require('express'),
+    ko = require('ko.sync')
 
-require('math.uuid')
+
 
 // Options
 
@@ -88,15 +90,7 @@ exports = module.exports = function() {
     
     // Knockout Sync
     
-    var ko = require('knockout'),
-        io = require('socket.io')
-
-    require('knockout.sync.server')(ko, io)
     ko.utils.socketListen(server, {resource: 'socket.io.ko.sync'});
-    
-    // Create the game model
-    
-    require('models/game.js').init(ko)
     
     // Start the simulation
     
