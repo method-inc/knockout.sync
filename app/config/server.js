@@ -103,7 +103,7 @@ exports = module.exports = function() {
   server.configure('development', function() {
     server.use(express.errorHandler({ dumpExceptions: true, showStack: true}))
     server.use(express.logger({ format: ':method :url :status' }));
-    server.set('port', 100)
+    server.set('port', 80)
     server.set('host', 'http://localhost:100')
   })
       

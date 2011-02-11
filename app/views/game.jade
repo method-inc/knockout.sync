@@ -2,8 +2,12 @@ h1 Maximus
 
 canvas#canvas(width="500", height="400", style="background: black")
 
+div
+  | <textarea id='chat' data-bind='value: text, valueUpdate: "afterkeydown"'></textarea>
+
 script
   | var game_id = '!{game_id}';
   | var controls_id = '!{controls_id}';
+  | var chat_id = '!{chat_id}';
   
 script(src='/js/game/game.js')

@@ -2,6 +2,7 @@
 
 var game = new ko.model(),
     controls = new ko.model(),
+    chat = new ko.model(),
     canvas = document.getElementById('canvas'),
     ctx = canvas.getContext('2d'),
     commands = {
@@ -40,6 +41,10 @@ game.on('ready', function() {
   })();
 });
 
+chat.on('ready', function() {
+  ko.applyBindings(chat);
+})
+
 window.setInterval(function() {
   ballX += 2;
   ballX %= 400;
@@ -54,10 +59,11 @@ $(document).bind('keydown', function(event) {
 })
 
 ko.utils.socketConnect(null, {
-    port: 100,
+    port: 80,
     transports: ['websocket', 'server-events', 'htmlfile', 'xhr-polling']
   }, '/js/lib/socketio-client/'
 );
 
 game.sync(game_id);
 controls.sync(controls_id);
+chat.sync(chat_id);

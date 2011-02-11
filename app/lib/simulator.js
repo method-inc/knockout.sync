@@ -4,8 +4,8 @@ var ko = require('ko.sync'),
 
 exports = module.exports = function() {
 
-  //setInterval(_bounce, 20)
-  setInterval(_move, 20)
+  setInterval(_bounce, 1000 / 25)
+  //setInterval(_move, 20)
 }
 
 function _move() {
